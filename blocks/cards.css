@@ -10,8 +10,10 @@
   padding: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 40px 20px;
   justify-content: center;
+  margin-top: 10px;
+  border-bottom: 1px solid #212121;
 }
 
 /* For tablets and smaller screens */
@@ -24,10 +26,11 @@
 /* For mobile */
 @media screen and (max-width: 627px) {
   .cards {
-    padding: 0 20px 36px;
+    padding: 0 0 20px;
   }
   
   .cards__list {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
