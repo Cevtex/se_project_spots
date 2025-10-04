@@ -38,6 +38,7 @@ se_project_spots/
 ├── blocks/           # BEM blocks (separate CSS files)
 │   ├── card.css
 │   ├── cards.css
+│   ├── content.css
 │   ├── footer.css
 │   ├── header.css
 │   ├── page.css
@@ -59,10 +60,13 @@ se_project_spots/
 ## Screenshots
 
 [Add screenshots of your desktop, tablet, and mobile views here]
+![Desktop view](images/screenshot-desktop.png)
+![Tablet view](images/screenshot-tablet.png)
+![Mobile view](images/screenshot-mobile.png)
 
 ## Live Demo
 
-[Add your GitHub Pages link here: https://yourusername.github.io/se_project_spots]
+page: https://cevtex.github.io/se_project_spots/
 
 ## Design
 
