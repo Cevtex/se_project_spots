@@ -6,6 +6,9 @@ Spots is a responsive photo-sharing web application that showcases beautiful loc
 
 The site is fully responsive and adapts seamlessly across desktop (1440px), tablet, and mobile (320px) screen sizes, ensuring an optimal viewing experience on all devices.
 
+## Video
+sprint video:https://www.youtube.com/watch?v=fQ8Lkqci0Fw
+
 ## Functionality
 
 - Responsive grid layout that displays 3 cards on desktop, 2 on tablet, and 1 on mobile
