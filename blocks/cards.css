@@ -10,20 +10,13 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, 413px);
   gap: 40px 20px;
   justify-content: center;
 }
 
-/* For tablets and smaller screens */
-@media screen and (max-width: 920px) {
-  .cards__list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 /* For mobile */
-@media screen and (max-width: 627px) {
+@media screen and (max-width: 288px) {
   .cards {
     padding: 20px 0 20px;
   }
