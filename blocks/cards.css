@@ -2,7 +2,7 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 20px 0 40px;
-  border-bottom: 1px solid #212121;
+  border-bottom: 1px solid #21212166;
 }
 
 .cards__list {
@@ -16,7 +16,7 @@
 }
 
 /* For mobile */
-@media screen and (max-width: 288px) {
+@media (max-width: 627px) {
   .cards {
     padding: 20px 0 20px;
   }

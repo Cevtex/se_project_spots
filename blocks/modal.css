@@ -1,18 +1,20 @@
+/* ====================================================================
+* MODAL WINDOW (Consolidated and Corrected)
+* ==================================================================== */
 .modal {
     visibility: hidden;
     background-color: rgba(0,0,0,0.5);
     position: fixed;
-    inset: 0; /* shorthand for top/right/bottom/left */
+    inset: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 24px; /* allow spacing on small viewports */
-    transition: visibility 0.15s linear, opacity 0.15s ease-in-out;
+    padding: 24px; 
+    transition: opacity 0.3s linear, visibility 0.3s linear 0.3s; 
     opacity: 0;
 }
 
-/* Some templates use _is-opened modifier */
-.modal_is-open, .modal_is-opened {
+.modal_is-open {
     visibility: visible;
     opacity: 1;
 }
@@ -25,6 +27,7 @@
     padding: 28px 36px;
     position: relative;
     box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    box-sizing: border-box; 
 }
 
 .modal__close-btn {
@@ -34,18 +37,15 @@
     width: 34px;
     height: 34px;
     border: 0;
-    background: transparent;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    color: #666;
+    background: transparent url('../images/Close.svg') no-repeat center center; 
+    background-size: 20px 20px;
+    opacity: 0.6;
+    transition: opacity 0.3s;
 }
 
-.modal__close-btn:focus,
 .modal__close-btn:hover {
-    color: #000;
+    opacity: 1;
 }
 
 .modal__title {
@@ -57,11 +57,7 @@
 .modal__form {
     display: flex;
     flex-direction: column;
-}
-
-/* give consistent spacing between form fields and button */
-.modal__form {
-    gap: 12px;
+    gap: 12px; 
 }
 
 .modal__label {
@@ -95,63 +91,48 @@
     border: 0;
     border-radius: 8px;
     cursor: pointer;
-    align-self: flex-start; /* keep smaller button left-aligned on larger viewports */
+    align-self: flex-start;
     transition: background-color 0.12s ease, transform 0.06s ease;
+    max-width: 156px;
 }
 
 .modal__submit-btn:hover {
     background-color: #000;
 }
 
-/* Small viewport tweaks */
+/* * MERGED MEDIA QUERY: Consolidates all (max-width: 480px) blocks and resolves conflicts.
+* Uses the intended smallest sizes (e.g., 14px padding, 14px font-size).
+*/
 @media (max-width: 480px) {
     .modal__container {
-        padding: 18px;
+        padding: 14px; 
         border-radius: 6px;
     }
-    .modal__title { font-size: 16px; }
-    .modal__close-btn { top: 12px; right: 12px; }
-    .modal__submit-btn { width: 100%; }
-}
-
-/* Responsive improvements and small adjustments */
-.modal {
-    /* ensure modal content has breathing room on very small viewports */
-    padding: 24px;
-}
-
-.modal__container {
-    /* make sure the container never touches the viewport edges */
-    box-sizing: border-box;
-}
-
-/* Give submit button a sensible default max width on larger viewports */
-.modal__submit-btn {
-    max-width: 156px;
-}
-
-@media (max-width: 480px) {
-    /* Reduce some sizes and make submit go full-width by removing max-width */
-    .modal__container {
-        padding: 14px;
+    .modal__title { 
+        font-size: 14px; 
     }
-    .modal__title { font-size: 14px; }
-    .modal__label { font-size: 13px; }
-    .modal__input { font-size: 13px; }
-    /* Make submit button span the full width of the form/container on small viewports */
+    .modal__label { 
+        font-size: 13px; 
+    }
+    .modal__input { 
+        font-size: 13px; 
+    }
+    .modal__close-btn { 
+        top: 12px; 
+        right: 12px; 
+    }
     .modal__form {
         width: 100%;
         box-sizing: border-box;
     }
-
     .modal__submit-btn {
-        display: block;                /* ensures it behaves like a block-level element */
+        display: block;
         width: 100%;
-        max-width: none;               /* remove any previous max-width constraint */
-        align-self: stretch;           /* for flex parents, make it stretch to full width */
-        box-sizing: border-box;        /* include padding/border in width calculation */
-        padding: 14px 18px;            /* a bit more vertical padding on mobile */
-        font-size: 15px;               /* slightly larger, easier to tap */
-        border-radius: 8px;            /* match container rounding */
+        max-width: none;
+        align-self: stretch;
+        box-sizing: border-box;
+        padding: 14px 18px;
+        font-size: 15px;
+        border-radius: 8px;
     }
 }

@@ -31,6 +31,23 @@ const profileDescriptionEl = document.querySelector('.profile__description');
 // MODAL HANDLERS
 // ====================================================================
 
+/**
+ * Opens the given modal element by adding the 'modal_is-open' class.
+ * @param {HTMLElement} modal The modal DOM element to open.
+ */
+function openModal(modal) {
+    modal.classList.add('modal_is-open');
+}
+
+/**
+ * Closes the given modal element by removing the 'modal_is-open' class.
+ * @param {HTMLElement} modal The modal DOM element to close.
+ */
+function closeModal(modal) {
+    modal.classList.remove('modal_is-open');
+}
+
+
 // Task 2: Handler for Edit Profile form submission
 function handleEditProfileSubmit(evt) {
     evt.preventDefault();
@@ -44,7 +61,7 @@ function handleEditProfileSubmit(evt) {
     profileDescriptionEl.textContent = newDescription;
     
     // Close the modal
-    editProfileModal.classList.remove('modal_is-open');
+    closeModal(editProfileModal); // REFACTORED: Using reusable function
 }
 
 // Task 3: Handler for New Post form submission
@@ -62,7 +79,7 @@ function handleAddCardSubmit(evt) {
     addCardFormElement.reset(); 
     
     // Close the modal.
-    newPostModal.classList.remove('modal_is-open');
+    closeModal(newPostModal); // REFACTORED: Using reusable function
 }
 
 
@@ -76,26 +93,27 @@ if (editProfileBtn && editProfileModal) {
         // Assign the current profile textContent to the input value
         editProfileNameInput.value = profileNameEl.textContent;
         editProfileDescriptionInput.value = profileDescriptionEl.textContent; 
-        editProfileModal.classList.add('modal_is-open');
+        
+        openModal(editProfileModal); // REFACTORED: Using reusable function
     });
 }
 
 // --- Close button listeners (General Modal Toggling) ---
 if (editProfileCloseBtn && editProfileModal) {
     editProfileCloseBtn.addEventListener('click', () => {
-        editProfileModal.classList.remove('modal_is-open');
+        closeModal(editProfileModal); // REFACTORED: Using reusable function
     });
 }
 
 if (newPostBtn && newPostModal) {
     newPostBtn.addEventListener('click', () => {
-        newPostModal.classList.add('modal_is-open');
+        openModal(newPostModal); // REFACTORED: Using reusable function
     });
 }
 
 if (newPostCloseBtn && newPostModal) {
     newPostCloseBtn.addEventListener('click', () => {
-        newPostModal.classList.remove('modal_is-open');
+        closeModal(newPostModal); // REFACTORED: Using reusable function
     });
 }
 
