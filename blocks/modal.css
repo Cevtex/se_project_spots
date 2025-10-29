@@ -2,6 +2,7 @@
 * MODAL WINDOW (Consolidated and Corrected)
 * ==================================================================== */
 .modal {
+    padding: 0 10px;
     visibility: hidden;
     background-color: rgba(0,0,0,0.5);
     position: fixed;
@@ -23,7 +24,7 @@
     width: 100%;
     border-radius: 8px;
     background-color: #fff;
-    padding: 28px 36px;
+    padding: 32px 50px;
     position: relative;
     box-shadow: 0 12px 30px rgba(0,0,0,0.15);
     box-sizing: border-box; 
@@ -31,14 +32,15 @@
 
 .modal__close-btn {
     position: absolute;
-    top: 16px;
-    right: 16px;
-    width: 34px;
-    height: 34px;
+    top: 32px;
+    right: 50px;
+    width: 40px;
+    height: 40px;
+    opacity: 0.4;
     border: 0;
     cursor: pointer;
     background: transparent url('../images/Close.png') no-repeat center center; 
-    background-size: 20px 20px;
+    background-size: 36px 36px;
     opacity: 0.6;
     transition: opacity 0.3s;
 }
@@ -61,7 +63,7 @@
 
 .modal__label {
     margin: 0 0 18px;
-    font-size: 14px;
+    font-size: 16px;
     color: #333;
 }
 
@@ -69,7 +71,7 @@
     display: block;
     margin: 8px 0 0;
     width: 100%;
-    padding: 10px 12px;
+    padding: 16px 12px;
     border: 1px solid #d6d6d6;
     border-radius: 6px;
     box-sizing: border-box;
@@ -98,6 +100,7 @@
     align-self: flex-start;
     transition: background-color 0.12s ease, transform 0.06s ease;
     max-width: 156px;
+    height: 52px;
     font-size: 16px;
 }
 
@@ -110,25 +113,17 @@
 */
 @media (max-width: 480px) {
     .modal__container {
-        padding: 14px; 
-        border-radius: 6px;
+        padding: 22px 12px 12px;
     }
     .modal__title { 
-        font-size: 14px; 
-    }
-    .modal__label { 
-        font-size: 13px; 
+        font-size: 20px;
     }
     .modal__input { 
-        font-size: 13px; 
+        font-size: 16px; 
     }
     .modal__close-btn { 
         top: 12px; 
         right: 12px; 
-    }
-    .modal__form {
-        width: 100%;
-        box-sizing: border-box;
     }
     .modal__submit-btn {
         display: block;
